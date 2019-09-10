@@ -32,19 +32,19 @@ allModel.add(layers.Dense(1, activation='sigmoid'))
 allModel.compile(optimizer='rmsprop',
                  loss='binary_crossentropy', metrics=['accuracy'])
 
-
-history = allModel.fit_generator(train_data, epochs=NUM_EPOCHS, validation_steps=test_data.samples,
-                                 steps_per_epoch=train_data.samples, validation_data=test_data).history
-loss = history['loss']
-val_loss = history['val_loss']
-acc = history['acc']
-val_acc = history['val_acc']
-epochs = range(1, len(loss)+1)
-plt.plot(epochs, loss, 'r', label='training loss')
-plt.plot(epochs, val_loss, 'c', lable='Validation loss')
-plt.plot(epochs, acc, 'g', label='training acc')
-plt.plot(epochs, val_acc, 'b', lable='Validation acc')
-plt.xlabel('Epochs')
-plt.ylabel('Loss')
-plt.legend()
-plt.show()
+allModel.summary()
+# history = allModel.fit_generator(train_data, epochs=NUM_EPOCHS, validation_steps=test_data.samples,
+#                                  steps_per_epoch=train_data.samples, validation_data=test_data).history
+# loss = history['loss']
+# val_loss = history['val_loss']
+# acc = history['acc']
+# val_acc = history['val_acc']
+# epochs = range(1, len(loss)+1)
+# plt.plot(epochs, loss, 'r', label='training loss')
+# plt.plot(epochs, val_loss, 'c', lable='Validation loss')
+# plt.plot(epochs, acc, 'g', label='training acc')
+# plt.plot(epochs, val_acc, 'b', lable='Validation acc')
+# plt.xlabel('Epochs')
+# plt.ylabel('Loss')
+# plt.legend()
+# plt.show()
